@@ -1,0 +1,27 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,td {
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 8px;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+td{
+    cursor:pointer;
+}
+
+td.available{
+    background-color: #4CAF50;
+}
+
+td.unavailable{
+    background-color: #F44336;
+}
