@@ -5,9 +5,11 @@ function generateSchedule(timeGridID, dateHeaderId) {
 
     let availability = {};
 
+    let isMouseDown = false;
+
     function toggleAvailability(event){
         let cell = event.target;
-
+    
         if(cell.tagName === "TD" && cell.id){
             if (cell.className==="unavailable"){
                 cell.className = "available";
@@ -19,6 +21,7 @@ function generateSchedule(timeGridID, dateHeaderId) {
             }
         }
     }
+    
 
     let tableHeader = document.querySelector("#" + dateHeaderId);
 
@@ -60,21 +63,44 @@ function generateSchedule(timeGridID, dateHeaderId) {
         let hourCell = document.createElement("td");
         hourCell.textContent = `${i}:00 - ${i+1}:00`;
         hourCell.setAttribute("colspan","2");
+        hourCell.classList.add("no-select");
         row.appendChild(hourCell);
 
         for (let j = 0; j < 7; j++){
             let cell = document.createElement("td");
             cell.id = `${timeGridID}day${j}hour${i}`;
-            cell.className = "unavailable";
-            cell.addEventListener("click", toggleAvailability);
+            cell.className = "available";
+            
+            // When the mouse is pressed down, start toggling availability
+            cell.addEventListener("mousedown", (event) => {
+                isMouseDown = true;
+                toggleAvailability(event);
+            });
+            
+            // When the mouse is moved, if it is down, toggle availability
+            cell.addEventListener("mouseover", (event) => {
+                if (isMouseDown) {
+                    toggleAvailability(event);
+                }
+            });
+            
+            // When the mouse is released, stop toggling availability
+            cell.addEventListener("mouseup", () => {
+                isMouseDown = false;
+            });
+    
             row.appendChild(cell);
-
-            availability[cell.id] = "unavailable";
+    
+            availability[cell.id] = "available";
         }
 
         timeGrid.appendChild(row);
 
+    
     }
+    document.addEventListener("mouseup",() =>{
+        isMouseDown=false;
+    })
 }
 
 generateSchedule("my_timeGrid", "my_dateHeaders")

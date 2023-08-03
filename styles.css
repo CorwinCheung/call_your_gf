@@ -1,27 +1,49 @@
+body {
+    background-color: #fbfcff;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1{
+    color: #00008B;
+    text-align: center;
+    padding: 30px;
+}
+
 table {
-    width: 100%;
+    width: 80%;
+    margin: 20px auto;
     border-collapse: collapse;
 }
 
-th,td {
-    border: 1px solid #ddd;
-    text-align: center;
-    padding: 8px;
-}
-
 th {
-    background-color: #4CAF50;
+    background-color: #ff9f68;
     color: white;
+    padding: 10px;
+    text-align: center;
 }
 
 td{
-    cursor:pointer;
+    cursor: pointer;
+    background-color: #eaf3f5;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #000;
 }
 
 td.available{
-    background-color: #4CAF50;
+    background-color: #40D376;
+    color: white;
 }
 
 td.unavailable{
-    background-color: #F44336;
+    background-color: #E85237;
+    color: white;
+}
+
+.no-select {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select:none;
 }
