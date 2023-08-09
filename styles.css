@@ -1,6 +1,7 @@
 body {
     background-color: #fbfcff;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    position: relative;
 }
 
 h1{
@@ -21,6 +22,65 @@ th {
     padding: 10px;
     text-align: center;
 }
+
+
+.header-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin: 20px auto;
+    width: 80%;
+    position: relative;  /* Add relative positioning here */
+}
+
+.timezone-container-gf {
+    position: absolute;
+    right: 0;  /* Position it to the rightmost edge of .header-container */
+    top: 52.5%;  /* Center it vertically */
+    transform: translateY(-50%);  /* Adjust for exact vertical centering */
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px; 
+    box-sizing: border-box;
+}
+
+.timezone-container-gf label {
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.timezone-container-gf select {
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+
+
+.timezone-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.timezone-container label {
+    margin-right: 10px;
+}
+
+.timezone-container select {
+    padding: 5px;
+    border-radius: 5px;
+}
+
 
 td{
     cursor: pointer;

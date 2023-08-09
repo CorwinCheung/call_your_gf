@@ -1,4 +1,6 @@
 
+let selectedTimeZone = document.getElementById("timezone").value;
+
 
 function generateSchedule(timeGridID, dateHeaderId) {
     let timeGrid = document.getElementById(timeGridID);
