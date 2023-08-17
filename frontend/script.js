@@ -105,7 +105,7 @@ function generateSchedule(timeGridID, dateHeaderId) {
 // Function to fetch and set the saved state from the server
 async function fetchAndSetState() {
     try {
-        const response = await fetch('https://call-your-gf.onrender.com/api/state');
+        const response = await fetch('https://call-your-gf-web-server.onrender.com/api/state');
         const data = await response.json();
 
         // Ensure there's data and get the first object in the array
@@ -134,7 +134,7 @@ async function fetchAndSetState() {
 // Function to update the state on the server
 async function updateState(cellId, newState) {
     try {
-        await fetch('https://call-your-gf.onrender.com/api/state', {
+        await fetch('https://call-your-gf-web-server.onrender.com/api/state', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
