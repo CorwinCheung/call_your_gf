@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+const PORT = process.env.PORT || 3000;
+
 
 const app = express();
 
@@ -10,7 +12,9 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://corwintcheung:XGqPgTqpEuJDFnUd@cluster0.c2rk75b.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true });
+const MONGODB_URI = process.env.MONGODB_URI;
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 const stateSchema = new mongoose.Schema({}, { strict: false });
 
@@ -59,6 +63,19 @@ app.post('/api/state', async (req, res) => {
 //     }
 // });
 
-app.listen(3000, () => {
-    console.log('Server running on port 3000');
+const server = app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
+
+
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+    // Close server & exit process
+    server.close(() => process.exit(1));
+});
+
+process.on('uncaughtException', (err) => {
+    console.error('Uncaught Exception:', err.message);
+    // Close server & exit process
+    server.close(() => process.exit(1));
 });
