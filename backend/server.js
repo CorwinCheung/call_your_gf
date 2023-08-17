@@ -9,7 +9,18 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 const corsOptions = {
-    origin: 'https://call-your-gf.onrender.com',
+    origin: function (origin, callback) {
+        const allowedOrigins = [
+            'https://call-your-gf.onrender.com',
+            'http://localhost:8080'
+        ];
+
+        if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     optionsSuccessStatus: 200
 };
 

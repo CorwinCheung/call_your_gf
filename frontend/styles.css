@@ -4,11 +4,13 @@ body {
     position: relative;
 }
 
-h1{
+h1 {
     color: #00008B;
     text-align: center;
-    padding: 30px;
+    padding: 30px 30px 30px 30px; /* Reduced top padding */
+    flex-grow: 1;
 }
+
 
 table {
     width: 80%;
@@ -23,6 +25,10 @@ th {
     text-align: center;
 }
 
+.gf-header {
+    padding-top: 0px; /* Adjust this value as needed */
+    margin-top: 0;
+}
 
 .header-container {
     display: flex;
@@ -33,31 +39,31 @@ th {
     position: relative;  /* Add relative positioning here */
 }
 
+.timezone-wrapper-gf {
+    text-align: right;  /* Pushes its children to the right */
+}
+
 .timezone-container-gf {
-    position: absolute;
-    right: 0;  /* Position it to the rightmost edge of .header-container */
-    top: 52.5%;  /* Center it vertically */
-    transform: translateY(-50%);  /* Adjust for exact vertical centering */
-    display: flex;
-    align-items: center;
-    background-color: white;
+    display: inline-block;  /* This line is added */
+    text-align: right;
+    margin-top: 30px;
+    padding-right: 10px; /* Adjust as needed for spacing from the right edge */
+    margin-bottom: 0px; /* Adds some space between the timezone box and the h1 */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 200px; 
-    box-sizing: border-box;
 }
+
 
 .timezone-container-gf label {
     margin-right: 10px;
-    white-space: nowrap;
 }
 
 .timezone-container-gf select {
     padding: 5px;
     border-radius: 5px;
-    width: 100%;
 }
+
 
 
 

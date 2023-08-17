@@ -8,9 +8,25 @@
         <div class="timezone-container">
             <label for="timezone">Time Zone:</label>
             <select id="timezone" name="timezone">
-                <option value="UTC">UTC</option>
-                <option value="PST">PST (UTC-8)</option>
-                <option value="EST">EST (UTC-5)</option>
+
+                <option value="UTC-5">EST (UTC-5): New York, Toronto, Atlanta</option>
+                <option value="UTC+8">CST (UTC+8): Kuala Lumpur, Beijing, Hong Kong, Taipei</option>
+                
+                <option value="UTC-10">HST Hawaii (UTC-10)</option>
+                <option value="UTC-8">PST (UTC-8): Los Angeles, San Francisco, Vancouver</option>
+                <option value="UTC-7">MST (UTC-7): Phoenix, Calgary, Denver</option>
+                <option value="UTC-6">CST (UTC-6): Chicago, Mexico City, Winnipeg</option>
+                <option value="UTC+0">GMT (UTC+0): London, Dublin, Lisbon</option>
+                <option value="UTC+1">CET (UTC+1): Paris, Berlin, Madrid</option>
+                <option value="UTC+2">EET (UTC+2): Athens, Bucharest, Johannesburg</option>
+                <option value="UTC+3"> TRT (UTC+3): Istanbul, Riyadh, Moscow</option>
+
+                <option value="UTC+4"> GST (UTC+4): Dubai, Baku, Muscat</option>
+                <option value="UTC+7"> ICT (UTC+7): Bangkok, Jakarta, Ho Chi Minh City</option>
+
+                <option value="UTC+9">JST (UTC+9): Tokyo, Osaka, Seoul</option>
+                <option value="UTC+10">AEST (UTC+10): Sydney, Brisbane, Melbourne"</option>
+                <option value="UTC+12">NZST (UTC+12): Auckland, Wellington</option>
                 <!-- Add more time zones as needed -->
             </select>
         </div>
@@ -27,16 +43,36 @@
             </tbody>
         </table>
 
-        <h1> Gf's Schedule</h1>
-        <div class="timezone-container-gf">
-            <label for="timezone-gf">Time Zone:</label>
-            <select id="timezone-gf" name="timezone-gf">
-                <option value="UTC">UTC</option>
-                <option value="PST">PST (UTC-8)</option>
-                <option value="EST">EST (UTC-5)</option>
-                <!-- Add more time zones as needed -->
-            </select>
+        <div class="timezone-wrapper-gf">
+            <div class="timezone-container-gf">
+                <label for="timezone-gf">Time Zone:</label>
+                <select id="timezone-gf" name="timezone-gf">
+                    <option value="UTC-5">EST (UTC-5): New York, Toronto, Atlanta</option>
+                        <option value="UTC+8">CST (UTC+8): Kuala Lumpur, Beijing, Hong Kong, Taipei</option>
+                        
+                        <option value="UTC-10">HST Hawaii (UTC-10)</option>
+                        <option value="UTC-8">PST (UTC-8): Los Angeles, San Francisco, Vancouver</option>
+                        <option value="UTC-7">MST (UTC-7): Phoenix, Calgary, Denver</option>
+                        <option value="UTC-6">CST (UTC-6): Chicago, Mexico City, Winnipeg</option>
+                        <option value="UTC+0">GMT (UTC+0): London, Dublin, Lisbon</option>
+                        <option value="UTC+1">CET (UTC+1): Paris, Berlin, Madrid</option>
+                        <option value="UTC+2">EET (UTC+2): Athens, Bucharest, Johannesburg</option>
+                        <option value="UTC+3"> TRT (UTC+3): Istanbul, Riyadh, Moscow</option>
+
+                        <option value="UTC+4"> GST (UTC+4): Dubai, Baku, Muscat</option>
+                        <option value="UTC+7"> ICT (UTC+7): Bangkok, Jakarta, Ho Chi Minh City</option>
+
+                        <option value="UTC+9">JST (UTC+9): Tokyo, Osaka, Seoul</option>
+                        <option value="UTC+10">AEST (UTC+10): Sydney, Brisbane, Melbourne"</option>
+                        <option value="UTC+12">NZST (UTC+12): Auckland, Wellington</option>
+                        <!-- Add more time zones as needed -->
+                </select>
+            </div>
         </div>
+        <div class="header-container-gf">
+            <h1 class="gf-header"> Gf's Schedule </h1>
+        </div>
+
         <table id="gf_schedule">
             <thead>
                 <tr id="gf_dateHeaders">

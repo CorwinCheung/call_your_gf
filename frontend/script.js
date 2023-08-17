@@ -106,6 +106,7 @@ function generateSchedule(timeGridID, dateHeaderId) {
 async function fetchAndSetState() {
     try {
         const response = await fetch('https://call-your-gf-web-server.onrender.com/api/state');
+        // const response = await fetch('http://localhost:3000/api/state'); //local testing
         const data = await response.json();
 
         // Ensure there's data and get the first object in the array
@@ -135,6 +136,7 @@ async function fetchAndSetState() {
 async function updateState(cellId, newState) {
     try {
         await fetch('https://call-your-gf-web-server.onrender.com/api/state', {
+        // await fetch('http://localhost:3000/api/state', { //local testing
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
