@@ -8,7 +8,13 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+    origin: 'https://call-your-gf.onrender.com',
+    optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+
 
 app.use(bodyParser.json());
 
